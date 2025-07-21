@@ -9,9 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     let juan = "Juan"
+    var x = "Mi boton"
+    @State private var show = false
     var body: some View {
-            Text("probando SwiftUI \(juan)")
-            ContentView2()
+//            Text("probando SwiftUI \(juan)")
+//            ContentView2()
+        Button(x) {
+            show = true
+            print("Hola desde consola")
+        }.alert(isPresented: $show, content: {
+            Alert(title: Text("Titulo"), message: Text("Mensaje aqui"),dismissButton: .default(Text("Aceptar")))
+        })
         }
         
         
